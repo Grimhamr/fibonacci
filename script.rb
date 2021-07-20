@@ -62,3 +62,33 @@ p"testing with 1"
 fibs_rec(1)
 p"testing with  13"
 fibs_rec(13)
+
+=begin
+Build a method #merge_sort that takes in an array and returns a sorted array, using a recursive merge sort methodology.
+Tips:
+Think about what the base case is and what behavior is happening again and again and can actually be delegated to someone else (e.g. that same method!).
+It may be helpful to check out the background videos again if you don’t quite understand what should be going on.
+=end
+p "merge_sort"
+array=[[1],[3],[2],[6],[5],[4]]
+
+def merge_sort(arr,sorted_array=[])
+    if arr.length==1
+        sorted_array.push(arr.flatten[0])
+    #slice array in half
+    else
+    arr1=arr.slice(0,arr.length/2)
+    arr2=arr.slice(arr.length/2,arr.length)
+    #if only one element, flatten and push to sorted array
+        merge_sort(arr1,sorted_array)
+
+        merge_sort(arr2,sorted_array)
+    #else repeat
+    end
+p sorted_array.sort!
+end
+
+merge_sort(array)
+
+    
+
