@@ -75,15 +75,11 @@ array=[[1],[3],[2],[6],[5],[4]]
 def merge_sort(arr,sorted_array=[])
     if arr.length==1
         sorted_array.push(arr.flatten[0])
-    #slice array in half
     else
-    arr1=arr.slice(0,arr.length/2)
-    arr2=arr.slice(arr.length/2,arr.length)
-    #if only one element, flatten and push to sorted array
-        merge_sort(arr1,sorted_array)
-
-        merge_sort(arr2,sorted_array)
-    #else repeat
+        arr1=arr.slice(0,arr.length/2)
+        arr2=arr.slice(arr.length/2,arr.length)
+            merge_sort(arr1,sorted_array)
+            merge_sort(arr2,sorted_array)
     end
 p sorted_array.sort!
 end
